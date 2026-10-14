@@ -88,3 +88,10 @@ live public role IDs through HTTP and MCP.
 Choose --network-mode direct for ordinary public egress or environment when the host requires its approved proxy/CA setup; decide explicitly before the first call. Required baseline capabilities are Python/Node, shell/file IO in an explicitly durable home and outbound public HTTPS. Artifact rendering and host scheduling are optional; chat links and conversational checks are the fallback. Human involvement is required for OAuth, write approval and merge.
 
 On-demand startup detaches its service (a new session on POSIX; a hidden process group on Windows), so a completed transient CLI/cron invocation does not terminate it. Startup/service OS locks are separate; an OS releases them when the owner exits/crashes, so a stale text PID cannot reserve the home after reboot. Reuse also requires the same home/release/profile identity and healthy port. No foreign PID is killed. --home/data contains durable app state; notes/, agent-search.json and contributions/ stay outside releases and clone updates.
+
+
+## Combined public discovery (2026-10-14)
+
+The default public-board API uses the same hosted v2 service as the website: Job Hound plus FreeHire. Search uses countries (two-letter codes), cities, newest/oldest sorting and next_cursor as query.cursor. Counts are upper bounds, not an exact globally deduplicated census. Provider limits, stale coverage and errors remain explicit. Preset-only queries may have limited supplementary coverage. Salary presence and legacy text location are unsupported for combined discovery. Saved roles and application history remain local.
+
+JOBHOUND_PUBLIC_SEARCH_MODE=legacy explicitly retains the original native-only reader; an explicitly configured JOBHOUND_PUBLIC_BOARD_URL also retains that manifest reader. Public reads send query filters to the hosted service, never private resumes or application history. The app bundles its UI and does not download remote UI code.

@@ -3,7 +3,14 @@
   "version": 1,
   "query": {
     "query": "marketing",
-    "location": "Montreal",
+    "location": "",
+    "countries": [
+      "CA"
+    ],
+    "cities": [
+      "Montreal"
+    ],
+    "cursor": null,
     "company_ids": [],
     "collection_ids": [],
     "work_modes": [

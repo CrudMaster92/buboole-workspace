@@ -16,6 +16,36 @@
           "title": "Location",
           "type": "string"
         },
+        "countries": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Countries",
+          "type": "array"
+        },
+        "cities": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50,
+          "title": "Cities",
+          "type": "array"
+        },
+        "cursor": {
+          "anyOf": [
+            {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cursor"
+        },
         "company_ids": {
           "items": {
             "type": "string"

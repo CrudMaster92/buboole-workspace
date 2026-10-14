@@ -1,3 +1,9 @@
+# Preview 8: combined public discovery
+
+Public-board HTTP and MCP now consume the same hosted v2 API as the main website, combining Job Hound and FreeHire. Use structured countries/cities and continuation cursors. Counts are upper bounds; provider failures, freshness and query-window limits remain explicit. The full 111-tool surface, durable home, saved roles and application history remain local. Stop the owned old service and reinstall with the same home.
+
+The public service receives search filters only, never private documents or application history. The bundled UI remains local; online combined discovery depends on the hosted API. Saved snapshots remain available when that service is unavailable. Explicit legacy manifest configuration retains the native-only reader.
+
 # Preview 7: public-board coverage and capacity
 
 Public feed readers accept all search pages that fit the 200 MB index contract,
@@ -57,3 +63,5 @@ verified replacement coverage and the human's explicit transition choice.
 Merge the trusted presets/public-collector infrastructure before the live
 contribution gate. Muse's supported human GitHub OAuth and per-write approval must
 be completed separately; live Muse PR publication remains unverified until observed.
+
+

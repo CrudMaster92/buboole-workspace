@@ -62,3 +62,10 @@ All 111 tools and the bundled UI remain available through the same backend. Save
 Read get_jobhound_status capabilities before scraping or recording. The agent profile disables local scraper creation/execution by default. Explain a supported desktop handoff instead of retrying blocked operations or weakening DNS/TLS. Sustained uptime and private Muse UI mounting require actual host tests. A dated read-only artifact gives a useful human view while those remain unverified.
 
 When a contribution is requested, its default shape is the public declarative package. Board/preset browsing remains the everyday entry point. A fully autonomous agent without its human present prepares a reviewable package, reports ready for review, and stops before OAuth, public writes or merge.
+
+
+## Combined public discovery (2026-10-14)
+
+The default public-board API uses the same hosted v2 service as the website: Job Hound plus FreeHire. Search uses countries (two-letter codes), cities, newest/oldest sorting and next_cursor as query.cursor. Counts are upper bounds, not an exact globally deduplicated census. Provider limits, stale coverage and errors remain explicit. Preset-only queries may have limited supplementary coverage. Salary presence and legacy text location are unsupported for combined discovery. Saved roles and application history remain local.
+
+JOBHOUND_PUBLIC_SEARCH_MODE=legacy explicitly retains the original native-only reader; an explicitly configured JOBHOUND_PUBLIC_BOARD_URL also retains that manifest reader. Public reads send query filters to the hosted service, never private resumes or application history. The app bundles its UI and does not download remote UI code.
