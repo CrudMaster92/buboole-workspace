@@ -170,6 +170,8 @@ def main():
                 raise ValueError("Run install first; use the same --home for every command")
             env = {**os.environ, "JOBHOUND_API_URL": api_url, "JOBHOUND_DB_PATH": str(root / "data" / "jobhound.sqlite3"), "JOBHOUND_LAN": "0", "JOBHOUND_EXTERNAL_NETWORK_MODE": args.network_mode, "JOBHOUND_PROFILE": args.profile,
                    "JOBHOUND_INSTANCE_ID": instance_id(root, value["release"]), "JOBHOUND_RELEASE": value["release"]}
+            # The installed runtime may predate the hosted hostname change.
+            env.setdefault("JOBHOUND_PUBLIC_SEARCH_URL", "https://buboole.realperson.chatgpt.site/api/public-jobs/v2")
             service_command = [str(python), "-m", "uvicorn", "server.app:app", "--host", "127.0.0.1", "--port", str(args.port)]
             launcher = [sys.executable, str(HERE / "jobhound.py"), "--home", str(root), "--port", str(args.port),
                         "--network-mode", args.network_mode, "--profile", args.profile, "managed-serve"]
