@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install a pinned JobHound release and operate it through shared contracts."""
+"""Install a pinned Buboole release and operate it through shared contracts."""
 from __future__ import annotations
 
 import argparse
@@ -37,7 +37,7 @@ def manifest():
     url = urlsplit(value["archive_url"])
     if url.scheme != "https" or url.hostname != "github.com" or url.username or url.password:
         raise ValueError("Release archive must use credential-free GitHub HTTPS")
-    if not url.path.startswith("/CrudMaster92/job-hound-workspace/releases/download/"):
+    if not url.path.startswith(("/CrudMaster92/buboole-workspace/releases/download/", "/CrudMaster92/job-hound-workspace/releases/download/")):
         raise ValueError("Release archive must belong to this repository")
     return value
 
@@ -89,7 +89,7 @@ def install(value, root, runtime, app, python):
         with tempfile.TemporaryDirectory(prefix="jobhound-", dir=root) as temporary:
             temporary = Path(temporary)
             archive = temporary / "release.tar.gz"
-            request = urllib.request.Request(value["archive_url"], headers={"User-Agent": "JobHound-workspace-installer"})
+            request = urllib.request.Request(value["archive_url"], headers={"User-Agent": "Buboole-workspace-installer"})
             with urllib.request.urlopen(request, timeout=60) as response, archive.open("wb") as output:
                 if urlsplit(response.geturl()).hostname not in {"github.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"}:
                     raise ValueError("Unexpected release download origin")

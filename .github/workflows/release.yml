@@ -33,7 +33,7 @@ jobs:
           assert re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,79}',release)
           archive=Path('release-assets')/f'jobhound-{release}.tar.gz'
           assert hashlib.sha256(archive.read_bytes()).hexdigest()==value['sha256']
-          assert value['archive_url']==f'https://github.com/CrudMaster92/job-hound-workspace/releases/download/{release}/{archive.name}'
+          assert value['archive_url']==f'https://github.com/CrudMaster92/buboole-workspace/releases/download/{release}/{archive.name}'
           with open(os.environ['GITHUB_OUTPUT'],'a') as output:
               output.write(f'release={release}\narchive={archive}\n')
           PY
@@ -49,5 +49,5 @@ jobs:
             cmp "$ARCHIVE" ".existing-release/$(basename "$ARCHIVE")"
           else
             gh release create "$RELEASE" "$ARCHIVE" release-assets/SHA256SUMS \
-              --target "$GITHUB_SHA" --title "JobHound $RELEASE" --notes-file RELEASE_NOTES.md --prerelease
+              --target "$GITHUB_SHA" --title "Buboole $RELEASE" --notes-file RELEASE_NOTES.md --prerelease
           fi

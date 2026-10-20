@@ -149,7 +149,7 @@ def stop_service(root, release, port):
     if not current:
         return {"ok": True, "status": "already_stopped"}
     if current.get("busy"):
-        raise ValueError("JobHound has active work; wait for its terminal receipt before stopping the service")
+        raise ValueError("Buboole has active work; wait for its terminal receipt before stopping the service")
     expected = instance_id(root, release)
     record = json.loads((root / "service.owner.json").read_text())
     if current.get("instance_id") != expected or record.get("instance_id") != expected or record.get("pid") != current.get("owner_pid"):

@@ -1,13 +1,13 @@
 ---
 name: jobhound-workspace
-description: Help a user find jobs with JobHound in an agent workspace, introduce its features and optional onboarding, search the global board and existing presets first, and present results in a host artifact when the bundled UI cannot be shown.
+description: Help a user find jobs with Buboole in an agent workspace, introduce its features and optional onboarding, search the global board and existing presets first, and present results in a host artifact when the bundled UI cannot be shown.
 ---
 
-# JobHound in an agent workspace
+# Buboole in an agent workspace
 
-Read [AGENTS.md](AGENTS.md) first, including in a new conversation. It explains what this distribution is and routes natural-language requests to the two lightweight guides: [find recruiters](skills/find-recruiters/SKILL.md) and [interview prep](skills/interview-prep/SKILL.md). These are usable instructions even without native skill registration; JobHound slash names do not promise a Muse slash menu. Read README.md for installation and transport. Use WORKFLOW.md for onboarding and job search; use ARTIFACT_GUIDE.md when the human needs a visible board. TEST_INSTRUCTIONS.md describes preview acceptance checks, not a requirement to create a monitor for every user.
+Read [AGENTS.md](AGENTS.md) first, including in a new conversation. It explains what this distribution is and routes natural-language requests to the two lightweight guides: [find recruiters](skills/find-recruiters/SKILL.md) and [interview prep](skills/interview-prep/SKILL.md). These are usable instructions even without native skill registration; Buboole slash names do not promise a Muse slash menu. Read README.md for installation and transport. Use WORKFLOW.md for onboarding and job search; use ARTIFACT_GUIDE.md when the human needs a visible board. TEST_INSTRUCTIONS.md describes preview acceptance checks, not a requirement to create a monitor for every user.
 
-Introduce JobHound as a personal job-search assistant with a shared global job board, company presets and monitors, saved roles and application tracking, resume/letter support, interview preparation and dashboard summaries. Explain which features are available in this host. Offer a short onboarding, allow skipping it, and provide useful results promptly.
+Introduce Buboole as a personal job-search assistant with a shared global job board, company presets and monitors, saved roles and application tracking, resume/letter support, interview preparation and dashboard summaries. Explain which features are available in this host. Offer a short onboarding, allow skipping it, and provide useful results promptly.
 
 Search the global board first. Inspect its status and collections, then use search_public_jobs with the discovered schema. Prefer its existing company/collection coverage. Browse presets next and use their IDs to filter shared roles without installing monitors. Offer short onboarding and optional daily read-only summaries using WORKFLOW.md. Public contribution is an optional third step only when this human explicitly asks; read CONTRIBUTIONS.md. Inspect capability limits before local scraping. Application tracking, platform-profile shortcuts and dashboard editing stay optional.
 
@@ -15,10 +15,10 @@ Use jobhound.py with the same home and port throughout. Discover typed tools; in
 
 Build, scrape and repair return run IDs; poll get_run_status until terminal. Queued work is not completed. Use request IDs only when the schema supports them. Monitor creation has no request ID or backend retry deduplication: list first, reuse its ID, and inspect after an uncertain response instead of repeating create. Repair the existing monitor rather than creating a duplicate.
 
-JobHound owns scraper schedules; never duplicate them with agent cron. A human-requested host reminder may read the shared feed and deliver a short summary, as described in WORKFLOW.md. Report partial, stale, failed and offline states accurately. Never bypass a DNS/IP guard, disable TLS verification, expose a tunnel or remove framing protection to pass a test.
+Buboole owns scraper schedules; never duplicate them with agent cron. A human-requested host reminder may read the shared feed and deliver a short summary, as described in WORKFLOW.md. Report partial, stale, failed and offline states accurately. Never bypass a DNS/IP guard, disable TLS verification, expose a tunnel or remove framing protection to pass a test.
 
 A host artifact is a presentation of results from the same backend, not a replacement app. Label snapshots with their retrieval time and refresh instructions; do not invent live connectivity or working write buttons. Preserve the bundled UI. Full human UI hosting in Muse and durable background operation remain unverified. Linux native audio capture is unsupported.
 
-If supported, use doctor's exact stdio MCP registration; otherwise use the typed JSON CLI. Do not claim that Muse can act as JobHound's outbound AI provider. Private documents and paid AI need the user's choice; neither is necessary for browsing global jobs.
+If supported, use doctor's exact stdio MCP registration; otherwise use the typed JSON CLI. Do not claim that Muse can act as Buboole's outbound AI provider. Private documents and paid AI need the user's choice; neither is necessary for browsing global jobs.
 
 When presets report community_status=offline with catalog_source=release_snapshot, the full packaged catalog is usable. Browse and inspect it normally; label it with catalog_generated_at and describe it as a release snapshot. Preserve the underlying live error. Do not claim unavailable presets or fresh online verification merely from the offline flag. Explicit installation still uses the normal preview, revision and validation contracts; snapshot availability does not establish that a scraper can access its careers site.

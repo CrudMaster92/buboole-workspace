@@ -1,9 +1,9 @@
 ---
 name: find-recruiters
-description: Find potential recruiters for a selected JobHound role, inspect Boolean/X-ray search results, or help refine a recruiter search. Also use for the conversational alias /find_recruiters.
+description: Find potential recruiters for a selected Buboole role, inspect Boolean/X-ray search results, or help refine a recruiter search. Also use for the conversational alias /find_recruiters.
 ---
 
-# Find recruiters with JobHound and Muse
+# Find recruiters with Buboole and Muse
 
 Read the workspace [AGENTS.md](../../AGENTS.md) for transport and ID rules.
 This is a lightweight workflow, not a requirement for a native Muse slash menu.
@@ -21,7 +21,7 @@ authorizes read-only public research; do not add a permission menu for that.
    Boolean query can be inspected directly without saving anything.
 2. On Muse, call `find_recruiters` with `live_search=false` to obtain the canonical
    Boolean query and Google `search_url` without an outbound AI provider. If the
-   human wants JobHound's configured-provider search, use `live_search=true`.
+   human wants Buboole's configured-provider search, use `live_search=true`.
    Discover the schema first. Neither mode configures a provider for them.
 3. For a request to find people, inspect the returned search URL/query using
    supported host public search/browser tools. Query generation and public
@@ -36,7 +36,7 @@ Present up to three supported potential contacts with public HTTPS LinkedIn
 `/in/` URLs, the visible name/headline and the employer/recruiting/location
 signals that support each match. Include the search link, date and relevant
 warnings. Label host-discovered contacts separately from backend candidates;
-do not pretend they were returned or stored by JobHound. Fewer supported matches
+do not pretend they were returned or stored by Buboole. Fewer supported matches
 are fine. An empty search observed today is not a permanent coverage claim.
 
 If useful, refine an overly narrow query by relaxing one location or function

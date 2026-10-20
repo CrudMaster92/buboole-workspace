@@ -1,6 +1,6 @@
-# JobHound agent workspace preview
+# Buboole agent workspace preview
 
-Run the existing JobHound app inside Meta Muse or a similar agent workspace. The backend, bundled web UI and 111 typed MCP tools come from canonical JobHound. This experimental distribution keeps the full app while testing a board-first agent workflow; it does not add Muse as an outbound AI provider.
+Run the existing Buboole app inside Meta Muse or a similar agent workspace. The backend, bundled web UI and 111 typed MCP tools come from canonical Buboole. This experimental distribution keeps the full app while testing a board-first agent workflow; it does not add Muse as an outbound AI provider.
 
 Preview 6 has passed real Muse and GitHub Linux tests: full-feed search, identical HTTP/MCP role IDs, 111 tools, automatic startup/reuse and stop/restart with retained notes. Proxy-aware board access and the dated preset snapshot work. Local scraper execution is disabled in the agent profile; blocked live preset refresh retains its original error and offline snapshot. Human UI mounting, full VM restart persistence and sustained background operation remain unverified.
 
@@ -14,7 +14,7 @@ fresh Muse-host lifecycle has not yet been observed.
 
 ## Fresh conversations and lightweight skills
 
-Read [AGENTS.md](AGENTS.md) as the entry point. A fresh Muse conversation may not automatically load this repository or register its files in a native skill catalog. You can introduce it with: "Use JobHound from CrudMaster92/job-hound-workspace; read AGENTS.md and use its workflows when I ask for job-search help."
+Read [AGENTS.md](AGENTS.md) as the entry point. A fresh Muse conversation may not automatically load this repository or register its files in a native skill catalog. You can introduce it with: "Use Buboole from CrudMaster92/buboole-workspace; read AGENTS.md and use its workflows when I ask for job-search help."
 
 Ask naturally for roles, recruiter contacts or interview practice. `/find_recruiters` and `/interview_prep` are conversational aliases for the [recruiter guide](skills/find-recruiters/SKILL.md) and [interview guide](skills/interview-prep/SKILL.md); `/skills` is the embedded app's menu, not a required Muse command. Muse can run public recruiter research using the backend's query and do sourced interview coaching without a separate outbound AI provider. Empty backend recruiter candidates do not prove the Google query has no matches.
 
@@ -48,7 +48,7 @@ External board, preset HTTP and scraper HTTP clients default to direct transport
 
 Equivalently set JOBHOUND_EXTERNAL_NETWORK_MODE=environment in the service environment. HTTPX then honors HTTP_PROXY/HTTPS_PROXY/ALL_PROXY/NO_PROXY (including lowercase variants), plus SSL_CERT_FILE/SSL_CERT_DIR. Use the host's existing approved configuration; do not print credentials, guess proxy URLs or disable certificate verification. Loopback agent-to-app HTTP remains direct regardless of these variables. Doctor reports selected mode and boolean presence without exposing proxy credentials.
 
-This opt-in does not remove host, redirect, size, checksum, TLS or DNS/IP validation. Scrapers and remote presets may still reject Muse's synthetic/non-public DNS; report those failures. The board feed's fixed configured origin uses its existing validation. Browser automation and AI-provider networking are separate and are not changed by this mode. A proxy is an explicitly trusted egress dependency, not an unrestricted JobHound endpoint.
+This opt-in does not remove host, redirect, size, checksum, TLS or DNS/IP validation. Scrapers and remote presets may still reject Muse's synthetic/non-public DNS; report those failures. The board feed's fixed configured origin uses its existing validation. Browser automation and AI-provider networking are separate and are not changed by this mode. A proxy is an explicitly trusted egress dependency, not an unrestricted Buboole endpoint.
 
 ## Present results to the human
 
@@ -59,16 +59,16 @@ Offer features and optional onboarding, use the global board first, and prefer e
 - Monitor creation lacks backend retry deduplication: list first and reuse its ID after uncertainty.
 - Native audio recording requires Windows; a cloud Linux VM cannot capture the human's laptop microphone through this app.
 - Private documents, paid AI and outbound agent-provider configuration are optional separate setup.
-- Profiles do not synchronize with a Windows installation. Scraper schedules belong to JobHound. Optional human-requested host reminders may read the shared feed and send summaries.
+- Profiles do not synchronize with a Windows installation. Scraper schedules belong to Buboole. Optional human-requested host reminders may read the shared feed and send summaries.
 - Do not expose public tunnels or weaken loopback/framing protection to host the app.
 
 ## Ownership
 
-Repository files are generated from canonical integrations/agent-workspace. The release includes canonical runtime, built UI and the same public-board query engine, with per-file hashes. Personal data, databases, credentials and installed environments are excluded. Fix source in canonical JobHound, then export a new release; do not fork the generated runtime. Installation/searching never submits applications.
+Repository files are generated from canonical integrations/agent-workspace. The release includes canonical runtime, built UI and the same public-board query engine, with per-file hashes. Personal data, databases, credentials and installed environments are excluded. Fix source in canonical Buboole, then export a new release; do not fork the generated runtime. Installation/searching never submits applications.
 
 ## Packaged full preset catalog (preview 4)
 
-This release includes a verified snapshot of all public preset collections, company/member/search pages and recipe artifacts. When online catalog access fails and no downloaded catalog is available, JobHound uses this read-only release snapshot through the existing UI/API/MCP contracts. No profile data is copied or monitors installed by fallback. It reports community_status=offline, catalog_status=stale, catalog_source=release_snapshot, generation/capture dates and the underlying live error. Offline does not mean the preset list is empty.
+This release includes a verified snapshot of all public preset collections, company/member/search pages and recipe artifacts. When online catalog access fails and no downloaded catalog is available, Buboole uses this read-only release snapshot through the existing UI/API/MCP contracts. No profile data is copied or monitors installed by fallback. It reports community_status=offline, catalog_status=stale, catalog_source=release_snapshot, generation/capture dates and the underlying live error. Offline does not mean the preset list is empty.
 
 Use list_company_presets and get_company_preset normally, including marketing-agencies-canada. Forced refresh retries the live catalog and may still return the snapshot. The snapshot is fixed to this release, not a live update: install a newer workspace release to get a newer snapshot when online access is blocked. A downloaded catalog retains priority; mismatched artifact revisions never silently resolve to older recipes. Existing preview/revision checks and recipe validation remain required for explicit installs. Careers-page scraper networking is separate and may still fail on synthetic DNS.
 
@@ -92,9 +92,10 @@ On-demand startup detaches its service (a new session on POSIX; a hidden process
 
 ## Combined public discovery (2026-10-14)
 
-The default public-board API uses the same hosted v2 service as the website: Job Hound plus FreeHire. Search uses countries (two-letter codes), cities, newest/oldest sorting and next_cursor as query.cursor. Counts are upper bounds, not an exact globally deduplicated census. Provider limits, stale coverage and errors remain explicit. Preset-only queries may have limited supplementary coverage. Salary presence and legacy text location are unsupported for combined discovery. Saved roles and application history remain local.
+The default public-board API uses the same hosted v2 service as the website: Buboole plus FreeHire. Search uses countries (two-letter codes), cities, newest/oldest sorting and next_cursor as query.cursor. Counts are upper bounds, not an exact globally deduplicated census. Provider limits, stale coverage and errors remain explicit. Preset-only queries may have limited supplementary coverage. Salary presence and legacy text location are unsupported for combined discovery. Saved roles and application history remain local.
 
 JOBHOUND_PUBLIC_SEARCH_MODE=legacy explicitly retains the original native-only reader; an explicitly configured JOBHOUND_PUBLIC_BOARD_URL also retains that manifest reader. Public reads send query filters to the hosted service, never private resumes or application history. The app bundles its UI and does not download remote UI code.
+
 ## Buboole hosted URL
 
 The hosted public search endpoint is now `https://buboole.realperson.chatgpt.site/api/public-jobs/v2`. Update this launcher and stop/start the existing service with the same private `--home` and port; the launcher supplies the new endpoint even to preview.8. Existing explicit `JOBHOUND_PUBLIC_SEARCH_URL` overrides are preserved; change an override pointing to the old hosted URL yourself. No account, database or runtime reinstall is required. The local application retains its current branding.

@@ -42,11 +42,11 @@ Check ok and result.isError, then use result.structuredContent or its documented
 
 After a useful search, offer a short daily update. Only create a supported host reminder/cron when that human opts in. Confirm preferred time/timezone and short message versus quiet artifact refresh. Inspect existing reminders and update one rather than duplicate.
 
-The reminder prompt should say: use the same durable JobHound home and network mode; inspect board freshness; search the human's saved criteria; report relevant matches not seen in the previous successful update using board job IDs; include direct links and feed date; keep the summary short. Persist the checkpoint in the `checkpoint` field of `<home>/agent-search.json` and update it only after actual delivery or a verified visible artifact. An unseen cached job is not necessarily newly posted. If the feed fails, report that once, retain the checkpoint and avoid retry floods.
+The reminder prompt should say: use the same durable Buboole home and network mode; inspect board freshness; search the human's saved criteria; report relevant matches not seen in the previous successful update using board job IDs; include direct links and feed date; keep the summary short. Persist the checkpoint in the `checkpoint` field of `<home>/agent-search.json` and update it only after actual delivery or a verified visible artifact. An unseen cached job is not necessarily newly posted. If the feed fails, report that once, retain the checkpoint and avoid retry floods.
 
 If the host has no scheduling or notifications, retain the private search and offer conversational checks when the human asks "check my roles". Do not invent a cron capability.
 
-Use the host's supported scheduling and notification facilities. No particular Muse agent's inbox, memory layout or artifact system is assumed. Await actual typed calls and delivery inside each reminder run; no fire-and-forget. This is a notification consumer of shared results, not a scraper schedule. JobHound owns deterministic collection; do not create per-agent scraper cron jobs. Keep an existing interim watch until replacement coverage is observed and its human explicitly chooses the transition.
+Use the host's supported scheduling and notification facilities. No particular Muse agent's inbox, memory layout or artifact system is assumed. Await actual typed calls and delivery inside each reminder run; no fire-and-forget. This is a notification consumer of shared results, not a scraper schedule. Buboole owns deterministic collection; do not create per-agent scraper cron jobs. Keep an existing interim watch until replacement coverage is observed and its human explicitly chooses the transition.
 
 ## Other portable capabilities
 
@@ -57,7 +57,7 @@ practice or `/interview_prep`, read
 explain native Muse research/coaching alongside the typed backend contracts;
 they work without a native slash menu or a separately configured AI provider.
 
-All 111 tools and the bundled UI remain available through the same backend. Saves, application tracking, resumes/letters, interview preparation and dashboard cards can be used or suggested when relevant. Discover schemas, inspect before writes and respect document/provider consent. JobHound tracks applications; it does not submit them to employers. Private files and paid AI are optional.
+All 111 tools and the bundled UI remain available through the same backend. Saves, application tracking, resumes/letters, interview preparation and dashboard cards can be used or suggested when relevant. Discover schemas, inspect before writes and respect document/provider consent. Buboole tracks applications; it does not submit them to employers. Private files and paid AI are optional.
 
 Read get_jobhound_status capabilities before scraping or recording. The agent profile disables local scraper creation/execution by default. Explain a supported desktop handoff instead of retrying blocked operations or weakening DNS/TLS. Sustained uptime and private Muse UI mounting require actual host tests. A dated read-only artifact gives a useful human view while those remain unverified.
 
@@ -66,6 +66,6 @@ When a contribution is requested, its default shape is the public declarative pa
 
 ## Combined public discovery (2026-10-14)
 
-The default public-board API uses the same hosted v2 service as the website: Job Hound plus FreeHire. Search uses countries (two-letter codes), cities, newest/oldest sorting and next_cursor as query.cursor. Counts are upper bounds, not an exact globally deduplicated census. Provider limits, stale coverage and errors remain explicit. Preset-only queries may have limited supplementary coverage. Salary presence and legacy text location are unsupported for combined discovery. Saved roles and application history remain local.
+The default public-board API uses the same hosted v2 service as the website: Buboole plus FreeHire. Search uses countries (two-letter codes), cities, newest/oldest sorting and next_cursor as query.cursor. Counts are upper bounds, not an exact globally deduplicated census. Provider limits, stale coverage and errors remain explicit. Preset-only queries may have limited supplementary coverage. Salary presence and legacy text location are unsupported for combined discovery. Saved roles and application history remain local.
 
 JOBHOUND_PUBLIC_SEARCH_MODE=legacy explicitly retains the original native-only reader; an explicitly configured JOBHOUND_PUBLIC_BOARD_URL also retains that manifest reader. Public reads send query filters to the hosted service, never private resumes or application history. The app bundles its UI and does not download remote UI code.

@@ -1,7 +1,7 @@
-# JobHound for Muse and other agents
+# Buboole for Muse and other agents
 
-This repository is the official **JobHound agent workspace distribution** at
-`CrudMaster92/job-hound-workspace`. It runs the same local-first backend,
+This repository is the official **Buboole agent workspace distribution** at
+`CrudMaster92/buboole-workspace`. It runs the same local-first backend,
 bundled human UI and 111 typed tools as the desktop app. It is not a separate
 scraper implementation or an outbound Muse AI connector.
 
@@ -16,7 +16,7 @@ Check both `ok` and `result.isError`, then read structured results.
 
 These instructions are usable Markdown even if this host has not registered
 them as native skills. `/skills`, `/find_recruiters` and `/interview_prep` are
-JobHound UI names and conversational aliases, not promised Muse slash commands.
+Buboole UI names and conversational aliases, not promised Muse slash commands.
 When asked about job-search help, offer the workflows below and read the relevant
 guide. The user does not need to know a slash name or install a paid AI provider.
 
@@ -51,7 +51,7 @@ query link, and distinguish potential contacts from confirmed hiring owners.
 Use typed contracts for app reads/writes; host research/coaching is supplementary
 and must be labelled with sources and limits. Public board IDs are strings;
 stored local `job_id` values are integers. Read returned IDs; never invent one
-or silently save/import a role just to obtain it. JobHound tracks applications;
+or silently save/import a role just to obtain it. Buboole tracks applications;
 it does not apply to employers or send outreach.
 
 The agent profile disables local scraper execution by default. Preserve DNS/TLS
@@ -62,13 +62,13 @@ Queued work is not completed: inspect its run ID until terminal.
 
 ## Ownership and updates
 
-This repository's launcher/docs are generated from canonical JobHound's
+This repository's launcher/docs are generated from canonical Buboole's
 `integrations/agent-workspace`; runtime archives come from its server and built
 UI. Change canonical source and export/synchronize it here; do not fork generated
 runtime or UI. Never commit personal searches, resumes, notes, databases or credentials.
 
 A new Muse chat may not automatically load repository files. When introducing
-JobHound, link this file and read the relevant guide. If the human asks to remember
+Buboole, link this file and read the relevant guide. If the human asks to remember
 the integration, retain only the repository/guide paths, chosen private home and
 capability names through supported host memory; do not claim global skill
 registration or future-chat discovery until that has actually been verified.

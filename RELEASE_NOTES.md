@@ -1,6 +1,6 @@
 # Preview 8: combined public discovery
 
-Public-board HTTP and MCP now consume the same hosted v2 API as the main website, combining Job Hound and FreeHire. Use structured countries/cities and continuation cursors. Counts are upper bounds; provider failures, freshness and query-window limits remain explicit. The full 111-tool surface, durable home, saved roles and application history remain local. Stop the owned old service and reinstall with the same home.
+Public-board HTTP and MCP now consume the same hosted v2 API as the main website, combining Buboole and FreeHire. Use structured countries/cities and continuation cursors. Counts are upper bounds; provider failures, freshness and query-window limits remain explicit. The full 111-tool surface, durable home, saved roles and application history remain local. Stop the owned old service and reinstall with the same home.
 
 The public service receives search filters only, never private documents or application history. The bundled UI remains local; online combined discovery depends on the hosted API. Saved snapshots remain available when that service is unavailable. Explicit legacy manifest configuration retains the native-only reader.
 
@@ -36,7 +36,7 @@ The distribution now has a root AGENTS.md for fresh conversations and two
 lightweight recruiter/interview guides. Slash names are conversational aliases,
 not assumed native Muse registration. Recruiter query results and backend
 candidates are distinct; public snippets can support contacts. Muse research
-and coaching remain useful without an outbound JobHound AI provider.
+and coaching remain useful without an outbound Buboole AI provider.
 
 ## Shared app, simpler agent workflow
 
